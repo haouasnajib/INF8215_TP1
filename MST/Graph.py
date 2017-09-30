@@ -32,6 +32,3 @@ class Graph(object):
             return Edge(i, j, self.costs[i, j])
         else:
             return Edge(j, i, self.costs[i, j])
-
-
-#Graph('N10.data')

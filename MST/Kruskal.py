@@ -44,16 +44,18 @@ class Kruskal(object):
         self.uf.reset()
 
         all_sorted_edges = self.g.get_sorted_edges()
-        useful_sorted_edges = []
+        useful_sorted_edges = []  # These edges will be the ones that will be considered in the MST
 
         if not sol.visited:
             useful_sorted_edges = all_sorted_edges
         else:
             for i_edge in all_sorted_edges:
                 if i_edge.source in sol.not_visited and i_edge.destination in sol.not_visited and i_edge.source != source and i_edge.destination != source:
+                    # These are all edges not touching the current solution
                     useful_sorted_edges.append(i_edge)
                 elif (i_edge.source == sol.visited[len(sol.visited)-1] and i_edge.destination in sol.not_visited) or \
                         (i_edge.destination == sol.visited[len(sol.visited)-1] and i_edge.source in sol.not_visited) and (i_edge.source != source and i_edge.destination != source):
+                    # These are all edges that share the last vertex from the solution
                     useful_sorted_edges.append(i_edge)
 
         for e_edge in useful_sorted_edges:

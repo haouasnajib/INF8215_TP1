@@ -52,7 +52,7 @@ class Node(object):
 
 def main():
     time_start = time.time()
-    data_file = "N12.data"
+    data_file = "N10.data"
 
     g = Graph(data_file)
 

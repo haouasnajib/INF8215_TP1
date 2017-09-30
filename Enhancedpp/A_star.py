@@ -32,7 +32,6 @@ class Node(object):
 
                 krus = Kruskal.kruskal
                 heur = krus.getMSTCost(sol, city_start)
-                # heur = 0
                 nod = Node(i, sol, heur)
 
                 Node.n_nodes_created += 1
@@ -43,7 +42,6 @@ class Node(object):
 
                 krus = Kruskal.kruskal
                 heur = krus.getMSTCost(sol, city_start)
-                # heur = 0
                 nod = Node(i, sol, heur)
 
                 Node.n_nodes_created += 1
@@ -63,7 +61,6 @@ def main():
     solution_start = Solution(g)
 
     heur = krus.getMSTCost(solution_start, city_start)
-    # heur = 0
 
     node_start = Node(city_start, solution_start, heur)
     Node.n_nodes_created += 1
